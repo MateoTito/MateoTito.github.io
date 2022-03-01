@@ -807,10 +807,14 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
         <script src="js/perso.js"></script>
         <script>
+            /*
         setTimeout(function() {
           $('body').addClass('loaded');
-          console.log("Termina el perso");
         }, 1500);
+        */
+        $(window).on("load",function(){
+            $('body').addClass('loaded');
+        });
         </script>
     </body>
 </html>
