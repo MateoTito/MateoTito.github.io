@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
-
+/* Determina si la página esta siendo visualizada para cambiar el título y favicon */
 window.onblur=function(){
     var delayInMilliseconds = 100;
 
@@ -67,8 +67,6 @@ window.onblur=function(){
         link.href = 'assets/sad-icon.ico';
         document.getElementsByTagName('head')[0].appendChild(link);
     }, delayInMilliseconds); 
-
-
 }
 window.onfocus=function(){
     var delayInMilliseconds = 100;
@@ -80,5 +78,6 @@ window.onfocus=function(){
         link.href = 'assets/img/yoshi.png';
         document.getElementsByTagName('head')[0].appendChild(link);
     }, delayInMilliseconds); 
-
 }
+
+/* Botones para modal */

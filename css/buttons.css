@@ -1,0 +1,554 @@
+/* button 1*/
+/* From cssbuttons.io by @adamgiebl */
+.button1 {
+    font-family: inherit;
+    font-size: 20px;
+    background: royalblue;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+   }
+   
+   .button1 span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+   }
+   
+   .button1 svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+   }
+   
+   .button1:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+   }
+   
+   .button1:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+   }
+   
+   .button1:hover span {
+    transform: translateX(5em);
+   }
+   
+   .button1:active {
+    transform: scale(0.95);
+   }
+   
+   @keyframes fly-1 {
+    from {
+     transform: translateY(0.1em);
+    }
+   
+    to {
+     transform: translateY(-0.1em);
+    }
+   }
+
+   /*Button2*/
+.button2 {
+    /* From cssbuttons.io */
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 750;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+   
+.button2:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.button2:active {
+    transform: translateY(-1px);
+}
+
+/* Button3 */
+/* From cssbuttons.io by @westitan */
+.button3 {
+    position: relative;
+    padding: 19px 36px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 40px;
+    border: none;
+   }
+   
+   .button3 span {
+    position: relative;
+    color: #fff;
+    font-family: Arial;
+    letter-spacing: 8px;
+    z-index: 1;
+   }
+   
+   .button3 .liquid {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: #4973ff;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+    transition: .5s;
+   }
+   
+   .button3 .liquid::after,
+   .button3 .liquid::before {
+    content: '';
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: #fff;
+   }
+   
+   .button3 .liquid::before {
+    border-radius: 45%;
+    background: rgba(20, 20, 20, 1);
+    animation: animate 5s linear infinite;
+   }
+   
+   .button3 .liquid::after {
+    border-radius: 40%;
+    background: rgba(20, 20, 20, .5);
+    animation: animate 10s linear infinite;
+   }
+   
+   .button3:hover .liquid {
+    top: -120px;
+   }
+   
+   @keyframes animate {
+    0% {
+     transform: translate(-50%, -75%) rotate(0deg);
+    }
+   
+    100% {
+     transform: translate(-50%, -75%) rotate(360deg);
+    }
+   }
+
+   /* Button4*/
+   /* From cssbuttons.io by @adamgiebl */
+.button4 {
+    border: none;
+    display: block;
+    position: relative;
+    padding: 0.7em 2.4em;
+    font-size: 18px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: royalblue;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+   }
+   
+   .button4 span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 4px solid royalblue;
+   }
+   
+   .button4 span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: var(--lightgray);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+   }
+   
+   .button4:hover span::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: royalblue;
+   }
+   
+   .button4:hover {
+    color: white;
+   }
+   
+   .button4:active span::before {
+    background: #2751cd;
+   }
+
+   /*Button5*/
+   /* From cssbuttons.io */
+.button5 {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+   }
+   
+   .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform
+       600ms
+       cubic-bezier(.3, .7, .4, 1);
+   }
+   
+   .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+       to left,
+       hsl(340deg 100% 16%) 0%,
+       hsl(340deg 100% 32%) 8%,
+       hsl(340deg 100% 32%) 92%,
+       hsl(340deg 100% 16%) 100%
+     );
+   }
+   
+   .front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: hsl(345deg 100% 47%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform
+       600ms
+       cubic-bezier(.3, .7, .4, 1);
+   }
+   
+   .button5:hover {
+    filter: brightness(110%);
+   }
+   
+   .button5:hover .front {
+    transform: translateY(-6px);
+    transition: transform
+       250ms
+       cubic-bezier(.3, .7, .4, 1.5);
+   }
+   
+   .button5:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+   }
+   
+   .button5:hover .shadow {
+    transform: translateY(4px);
+    transition: transform
+       250ms
+       cubic-bezier(.3, .7, .4, 1.5);
+   }
+   
+   .button5:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+   }
+   
+   .button5:focus:not(:focus-visible) {
+    outline: none;
+   }
+
+   /*Button6*/
+   /* From cssbuttons.io by @Sergestra */
+.button6 {
+    outline: 0;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 140px;
+    height: 50px;
+    border-radius: 0.5em;
+    box-shadow: 0 0.625em 1em 0 rgba(30, 143, 255, 0.35);
+    overflow: hidden;
+   }
+   
+   .button6 div {
+    transform: translateY(0px);
+    width: 100%;
+   }
+   
+   .button6,
+   .button6 div {
+    transition: 0.6s cubic-bezier(.16,1,.3,1);
+   }
+   
+   .button6 div span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0.75em 1.125em;
+   }
+   
+   .button6 div:nth-child(1) {
+    background-color: #1e90ff;
+   }
+   
+   .button6 div:nth-child(2) {
+    background-color: #21dc62;
+   }
+   
+   .button6:hover {
+    box-shadow: 0 0.625em 1em 0 rgba(33, 220, 98, 0.35);
+   }
+   
+   .button6:hover div {
+    transform: translateY(-50px);
+   }
+   
+   .button6 p {
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffffff;
+   }
+   
+   .button6:active {
+    transform: scale(0.95);
+   }
+
+   /*Button7*/
+   /* From cssbuttons.io by @DGtalsam */
+.custom-btn7 {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+           7px 7px 20px 0px rgba(0, 0, 0, .1),
+           4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+   }
+   
+   .btn7 {
+    background: linear-gradient(0deg, rgba(255, 151, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+   }
+   
+   .btn7 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+   }
+   
+   .btn7:before,
+   .btn7:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    background: rgba(251, 75, 2, 1);
+    box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, .9),
+           -4px -4px 5px 0px rgba(255, 255, 255, .9),
+           7px 7px 20px 0px rgba(0, 0, 0, .2),
+           4px 4px 5px 0px rgba(0, 0, 0, .3);
+    transition: all 0.3s ease;
+   }
+   
+   .btn7:before {
+    height: 0%;
+    width: 2px;
+   }
+   
+   .btn7:after {
+    width: 0%;
+    height: 2px;
+   }
+   
+   .btn7:hover {
+    color: rgba(251, 75, 2, 1);
+    background: transparent;
+   }
+   
+   .btn7:hover:before {
+    height: 100%;
+   }
+   
+   .btn7:hover:after {
+    width: 100%;
+   }
+   
+   .btn7 span:before,
+   .btn7 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: rgba(251, 75, 2, 1);
+    box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, .9),
+           -4px -4px 5px 0px rgba(255, 255, 255, .9),
+           7px 7px 20px 0px rgba(0, 0, 0, .2),
+           4px 4px 5px 0px rgba(0, 0, 0, .3);
+    transition: all 0.3s ease;
+   }
+   
+   .btn7 span:before {
+    width: 2px;
+    height: 0%;
+   }
+   
+   .btn span:after {
+    height: 2px;
+    width: 0%;
+   }
+   
+   .btn span:hover:before {
+    height: 100%;
+   }
+   
+   .btn span:hover:after {
+    width: 100%;
+   }
+
+   /*Button8*/
+   /* From cssbuttons.io */
+.button8 {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+   }
+   
+   .button8.learn-more {
+    width: 12rem;
+    height: auto;
+   }
+   
+   .button8.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #282936;
+    border-radius: 1.625rem;
+   }
+   
+   .button8.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+   }
+   
+   .button8.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+   }
+   
+   .button8.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+   }
+   
+   .button8.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #282936;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+   }
+   
+   .button8:hover .circle {
+    width: 100%;
+   }
+   
+   .button8:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+   }
+   
+   .button8:hover .button-text {
+    color: #fff;
+   }
