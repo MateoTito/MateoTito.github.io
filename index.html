@@ -516,7 +516,7 @@
                 </div>
             </div>
         </section>
-        <!--Google map-->
+        <!--Google maps1-->
         <div class="row">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Mapa de Google</h2>
@@ -527,7 +527,68 @@
                 width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
-         <!--Google Maps-->
+        <!--Google Maps2-->
+        <div class="row">
+            <div class="col-md-6">
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <!-- Name input-->
+                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Email address input-->
+                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <!-- Phone number input-->
+                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <!-- Message input-->
+                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center text-white mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            To activate this form, sign up at
+                            <br />
+                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                    <!-- Submit Button-->
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="map_container ">
+                    <div id="map" class="z-depth-1-half map-container" style="height: 500px">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d997.435645711365!2d-78.11785550283597!3d0.35303456890108625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1645987121876!5m2!1ses!2sec" 
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- end book section -->
+        </div>
         <!-- Clients-->
         <div class="py-5">
             <div class="container">
@@ -854,7 +915,7 @@
                 </div>
             </div>
         </div>
-        <!-- Loader -->
+        <!-- Preloader -->
         <div id="loader-wrapper">
             <div id="loader"></div>
             <div class="loader-section section-left"></div>
@@ -875,9 +936,19 @@
         setTimeout(function() {
           $('body').addClass('loaded');
         }, 1500);
-        */
+        
         $(window).on("load",function(){
             $('body').addClass('loaded');
+        });
+        */
+       /**
+        * Preloader
+        */
+        $(document).ready(function(){
+            window.addEventListener('load', () => {
+                $('body').addClass('loaded');
+                console.log("Holaaa");
+            });
         });
         </script>
     </body>
