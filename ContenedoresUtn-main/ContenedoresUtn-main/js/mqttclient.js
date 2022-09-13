@@ -2,25 +2,39 @@
 /*####################################### CLIENTE MQTT ###########################################*/
 /*################################################################################################*/
 
-let wsbroker = "broker.hivemq.com";
-let wsport = 8000; // port for above
+const mqtt = require('mqtt');
 
-let client = new Paho.MQTT.Client(
-	wsbroker,
-	wsport,
-	"myclientid_" + parseInt(Math.random() * 100, 10)
-);
-
-client.onConnectionLost = function (responseObject) {
-	console.log("connection lost: " + responseObject.errorMessage);
+// your credentials
+const options = {
+  username: 'mateotito1',
+  password: 'alexander316',
 };
+
+// reassurance that the connection worked
+client.on('connect', () => {
+  console.log('Connected!');
+});
+
+// prints an error message
+client.on('error', (error) => {
+  console.log('Error:', error);
+});
+
+// subscribe and publish to the same topic
+client.subscribe('messages');
+client.publish('messages', 'Hello, this message was received!');
+
+/* ###############################################################################################*/
+
 
 /*################################################################################################*/
 /*####################################### LLEGA EL MENSAJE########################################*/
 /*################################################################################################*/
 
-client.onMessageArrived = function (message) {
-	console.log(message.payloadString);
+// prints a received message
+client.on('message', function(topic, message) {
+  	console.log(String.fromCharCode.apply(null, message)); // need to convert the byte array to string
+	
 	let json = JSON.parse(message.payloadString);
 	/* Contenedor 1 */
 	document.getElementById("contenedorUnoVolumen").innerHTML =
@@ -56,19 +70,12 @@ client.onMessageArrived = function (message) {
 	];
 
 	draw(location);
-};
+	
+});
 
-let options = {
-	timeout: 3,
-	onSuccess: function () {
-		console.log("mqtt connected");
-		client.subscribe("testEc2021", { qos: 1 });
-	},
-	onFailure: function (message) {
-		console.log("Connection failed: " + message.errorMessage);
-	},
-};
+
 
 function init() {
-	client.connect(options);
+	// connect to your cluster, insert your host name and port
+	const client = mqtt.connect('tls://f2b1609840084b779ce38ba266e6eb8d.s1.eu.hivemq.cloud:8884', options);
 }
