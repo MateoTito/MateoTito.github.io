@@ -8,23 +8,33 @@ const mqtt = require('mqtt');
 const options = {
   username: 'mateotito1',
   password: 'alexander316',
+  host: 'f2b1609840084b779ce38ba266e6eb8d.s1.eu.hivemq.cloud',
+	port: 8884,
+	protocol: 'mqtts',
+
 };
 
-const client = mqtt.connect('tls://f2b1609840084b779ce38ba266e6eb8d.s1.eu.hivemq.cloud:8884', options);
+// initialize the MQTT client
+var client = mqtt.connect(options);
 
-// reassurance that the connection worked
-client.on('connect', () => {
-  console.log('Connected!');
+// setup the callbacks
+client.on('connect', function () {
+    console.log('Connected');
 });
 
-// prints an error message
-client.on('error', (error) => {
-  console.log('Error:', error);
+client.on('error', function (error) {
+    console.log(error);
 });
 
-// subscribe and publish to the same topic
-client.subscribe('messages');
-client.publish('messages', 'Hello, this message was received!');
+
+// subscribe to topic 'my/test/topic'
+client.subscribe('my/test/topic');
+
+// publish message 'Hello' to topic 'my/test/topic'
+client.publish('my/test/topic', 'Hello');
+
+
+
 
 /* ###############################################################################################*/
 
@@ -35,7 +45,7 @@ client.publish('messages', 'Hello, this message was received!');
 
 // prints a received message
 client.on('message', function(topic, message) {
-  	console.log(String.fromCharCode.apply(null, message)); // need to convert the byte array to string
+  	console.log('Received message:', topic, message.toString());
 	
 	let json = JSON.parse(message.payloadString);
 	/* Contenedor 1 */
@@ -74,10 +84,3 @@ client.on('message', function(topic, message) {
 	draw(location);
 	
 });
-
-function init() {
-	console.log("Listo");
-}
-
-
-
