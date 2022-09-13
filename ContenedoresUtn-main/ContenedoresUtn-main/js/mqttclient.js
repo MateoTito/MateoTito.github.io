@@ -75,7 +75,9 @@ client.on('message', function(topic, message) {
 	
 });
 
-
+function init() {
+	console.log("Listo");
+}
 
 
 
