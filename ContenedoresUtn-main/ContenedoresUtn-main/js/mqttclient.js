@@ -10,6 +10,8 @@ const options = {
   password: 'alexander316',
 };
 
+const client = mqtt.connect('tls://f2b1609840084b779ce38ba266e6eb8d.s1.eu.hivemq.cloud:8884', options);
+
 // reassurance that the connection worked
 client.on('connect', () => {
   console.log('Connected!');
@@ -75,7 +77,5 @@ client.on('message', function(topic, message) {
 
 
 
-function init() {
-	// connect to your cluster, insert your host name and port
-	const client = mqtt.connect('tls://f2b1609840084b779ce38ba266e6eb8d.s1.eu.hivemq.cloud:8884', options);
-}
+
+
